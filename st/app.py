@@ -12,7 +12,7 @@ import plotly.graph_objs as go
 def heatmap():
     aa=datas.groupby([datas['weekday'],datas['time'],datas['age'],datas['sex']])[['Tag']].value_counts() # 평/주말과 시간,나이,성별에 대한 종목들의 카운트
     aa = pd.DataFrame(aa)
-    aa = aa.unstack()
+    aa = aa.unstack() 
     aa.fillna(0,inplace=True)
 
     px.imshow(aa)
